@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" ng-app="calApp">
+  <head>
+    <script src="angular.js"></script>
+    <script src="app.js"></script>
+    <meta charset="utf-8">
+    <title>Calculator</title>
+  </head>
+  <body ng-controller= "calCtrl as c1">
+      <h1>Calculator App</h1>
+       <input type="text" ng-model="c1.firstNumber">{{c1.operation}} <input type="text" ng-model="c1.secondNumber"> <button ng-click="c1.calculate()">=</button> {{c1.dispAns}}
+
+       <p><button ng-click="c1.getSign('+')">+</button>
+       <button ng-click="c1.getSign('-')">-</button>
+       <button ng-click="c1.getSign('/')">/</button>
+       <button ng-click="c1.getSign('*')">*</button></p>
+
+
+  </body>
+</html>

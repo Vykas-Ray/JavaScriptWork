@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" ng-app="myApp">
+  <head>
+    <script src="angular.js">
+
+    </script>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div ng-controller="MainCtrl">
+        <h1>Clock App</h1>
+        <p>Current time is: {{time}}</p>
+        <p ng-if="hour < 12">Good Morning</p>
+        <p ng-if="hour >= 12 && hour <= 17">Good Afternoon</p>
+        <p ng-if="hour > 17" >Good Evening</p>
+        <p>Hour of the day is {{hour}}</p>
+    </div>
+
+    <script>
+      var module = angular.module("myApp", []);
+      module.controller("MainCtrl", Main)
+      function Main($scope){
+        var date = new Date();
+        $scope.time = date.toTimeString();
+        $scope.hour = date.getHours();
+
+        console.log("Main Called");
+      }
+    </script>
+  </body>
+</html>
